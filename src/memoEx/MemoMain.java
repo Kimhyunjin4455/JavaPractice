@@ -1,8 +1,17 @@
 package memoEx;
 
+import memoEx.entity.Post;
+
 import java.util.Scanner;
 
 public class MemoMain {
+
+    private final Post post;
+
+    public MemoMain(){
+        this.post = new Post();
+    }
+
     public void run(){
         while (true){
             Scanner scanner = new Scanner(System.in);
@@ -13,15 +22,21 @@ public class MemoMain {
             int selectedMenu = scanner.nextInt();
 
             if( 1 == selectedMenu){
-                
+                /** 글 전체(리스트)보기 **/
+                post.printAllPosts();
+
             } else if ( 2 == selectedMenu) {
-                
+                /** 글 상세보기 **/
+                post.printPost();
             } else if ( 3 == selectedMenu ) {
-                
+                /** 쓰기 **/
+                post.write();
             } else if( 4 == selectedMenu ) {
-
+                /** 수정 **/
+                post.updatePost();
             } else if ( 5 == selectedMenu ) {
-
+                /** 삭제 */
+                post.deletePost();
             } else if ( 6 == selectedMenu ) {
                 break;
             }else {
