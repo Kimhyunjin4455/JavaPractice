@@ -7,7 +7,7 @@ public class Main {
         //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
         // to see how IntelliJ IDEA suggests fixing it.
 
-        // 게시판 실행.
+        // 게시판 실행, 커밋 테스트
         MemoMain main = new MemoMain();
         main.run();
 
