@@ -1,13 +1,11 @@
 package memoEx.entity;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Post {
     private int postLength = 0;                 // 게시글의 갯수
-    private List<PostEntity> postEntities = new ArrayList<>();          // final 삭제처리 해버림
+//    private List<PostEntity> postEntities = new ArrayList<>();          // final 삭제처리 해버림
+private List<PostEntity> postEntities = new LinkedList<>();
     private final int POST_SIZE = 20;           // 게시글의 최대 저장 갯수
 
 //    public Post(){
@@ -53,6 +51,10 @@ public class Post {
 
             String headLine = String.format("게시글 번호: %d 게시글 제목: %s 작성일: %s", i, postEntity.getTitle(), postEntity.getLastUpdatedDateTime());
             System.out.println(headLine);
+        }
+
+        for(int i = 0; i < postEntities.size(); i++){
+            System.out.println(postEntities.get(i).getTitle() +" / "+ postEntities.get(i).getContent());
         }
 
         System.out.println("");

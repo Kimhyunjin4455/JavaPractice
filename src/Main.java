@@ -100,5 +100,27 @@ public class Main {
         texts.removeLast();
 
 
+
+
+        Thread thread2 = new Thread(new DaemonEx("데몬스레드2"));
+        thread2.start();
+
+        System.out.println("메인 스레드 종료");
+
+//        try {
+//            thread2.sleep(7000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+
+
+
     }
+
+    public void threadTest(){
+        Thread thread1 = new Thread(new DaemonEx("데몬스레드1"));
+        thread1.setDaemon(true);
+
+        thread1.start();
+    } // 메인스레드가 아닌 데몬스레드이기에 메인스레드 종료와 함께 종료됨
 }
