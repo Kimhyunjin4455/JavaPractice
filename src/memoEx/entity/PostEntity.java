@@ -3,19 +3,21 @@ package memoEx.entity;
 import java.time.LocalDateTime;
 
 public class PostEntity {
+
+    private int id;
     private String title;
     private String content;
 
     private LocalDateTime lastUpdatedDateTime;
 
-    private PostEntity(String title, String content){
+    private PostEntity(int id, String title, String content, LocalDateTime localDateTime){
         this.title = title;
         this.content = content;
-        this.lastUpdatedDateTime = LocalDateTime.now();
+        this.lastUpdatedDateTime = localDateTime;
     }
 
-    static PostEntity newInstance(String title, String content){
-        return new PostEntity(title, content);
+    static PostEntity newInstance(int id, String title, String content, LocalDateTime localDateTime){
+        return new PostEntity(id, title, content, localDateTime);
     }
 
     void update(String content){
@@ -23,6 +25,9 @@ public class PostEntity {
         this.lastUpdatedDateTime = LocalDateTime.now();
     }
 
+    int getId(){
+        return id;
+    }
 
     public String getTitle() {
         return title;
